@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>作品集 · 何俊贤</title>
+  <meta name="description" content="作品集：嵌入式项目、实物图片、功能简介与源码链接。">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230ea5e9'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='48' fill='white' font-family='Arial,Helvetica,sans-serif'%3EH%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div id="top-progress"></div>
+  <header class="site-header">
+    <nav class="container nav">
+      <a class="brand" href="./index.html">Hé Junxian</a>
+      <button class="nav-toggle" aria-label="切换导航">☰</button>
+      <ul class="nav-links">
+        <li><a href="./index.html#about">关于</a></li>
+        <li><a href="./index.html#skills">技能</a></li>
+        <li><a href="./index.html#projects">项目</a></li>
+        <li><a href="./index.html#experience">实习</a></li>
+        <li><a href="./index.html#education">教育</a></li>
+        <li><a href="./index.html#honors">荣誉</a></li>
+        <li><a href="./index.html#contact">联系</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <h2>作品集</h2>
+      <p class="work-desc">展示个人作品的图片、简介与源码链接。图片可替换为实物/界面截图。</p>
+
+      <div class="gallery">
+        <article class="work-card">
+          <img class="work-thumb" src="https://picsum.photos/seed/coil/800/450" alt="磁悬浮实验装置">
+          <div class="work-body">
+            <h3 class="work-title">磁悬浮实验装置</h3>
+            <p class="work-desc">STM32F103 + H 桥 + PWM 电流控制，霍尔传感闭环，增量式 PID 抑制震荡，实现浮子稳定悬浮。</p>
+            <div class="work-meta">
+              <span class="badge">STM32 · PID</span>
+              <span class="links">
+                <a href="https://github.com/your-username/levitation" target="_blank" rel="noopener">源码</a>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <img class="work-thumb" src="https://picsum.photos/seed/doorlock/800/450" alt="智能门禁系统">
+          <div class="work-body">
+            <h3 class="work-title">智能门禁系统</h3>
+            <p class="work-desc">AS608 指纹、RC522 IC 卡、密码与蓝牙四合一解锁，W25Q64 存储用户数据，SYN6288 语音播报。</p>
+            <div class="work-meta">
+              <span class="badge">指纹 · RC522</span>
+              <span class="links">
+                <a href="https://github.com/your-username/smart-doorlock" target="_blank" rel="noopener">源码</a>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <img class="work-thumb" src="https://picsum.photos/seed/rtos/800/450" alt="FreeRTOS 多任务演示">
+          <div class="work-body">
+            <h3 class="work-title">FreeRTOS 多任务演示</h3>
+            <p class="work-desc">任务调度、队列与互斥量演示工程，展示传感采集、运算与显示三任务解耦与实时性保障。</p>
+            <div class="work-meta">
+              <span class="badge">FreeRTOS</span>
+              <span class="links">
+                <a href="https://github.com/your-username/freertos-demo" target="_blank" rel="noopener">源码</a>
+              </span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top:18px;color:#94a3b8;">提示：将图片链接替换为你的实物/界面图片地址，或把图片放到仓库并以相对路径引用（如 <code>./assets/xxx.jpg</code>）。</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div>© <span id="year"></span> 何俊贤 · 作品集</div>
+      <div class="foot-links">
+        <a href="./index.html">返回首页</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  toggle.addEventListener('click', () => { links.classList.toggle('open'); });
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const bar = document.getElementById('top-progress');
+  if (bar) {
+    requestAnimationFrame(() => { bar.style.width = '70%'; });
+    window.addEventListener('load', () => {
+      bar.style.width = '100%';
+      setTimeout(() => { bar.style.width = '0'; }, 400);
+    });
+  }
+  </script>
+</body>
+</html>
+
+
